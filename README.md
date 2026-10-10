@@ -22,3 +22,13 @@ npx serve out
 ```
 
 Cloudflare Pages 的构建命令为 `npm run build`，输出目录为 `out`。
+
+## GitHub Pages
+
+仓库已经包含 GitHub Actions 部署流程。将仓库的 Pages 来源设置为 **GitHub Actions** 后，每次推送到 `main` 会自动构建并发布。项目站点地址通常是：
+
+```text
+https://woyao800gehaoyun-cmd.github.io/xuanjichang.xyz/
+```
+
+GitHub Pages 构建会自动使用 `/xuanjichang.xyz` 作为 `basePath`；本地开发和自定义域名仍使用根路径，不会互相影响。
