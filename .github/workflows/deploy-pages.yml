@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAGES: 'true'
+      # The site uses the custom domain xuanjichang.vip, so assets live at /
+      # rather than under the repository name.
+      GITHUB_PAGES_BASE_PATH: ''
     steps:
       - name: Checkout
         uses: actions/checkout@v4
