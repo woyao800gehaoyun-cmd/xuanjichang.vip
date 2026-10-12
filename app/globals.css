@@ -3,26 +3,27 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
-  background: #0b0f17;
+  color-scheme: light;
+  background: #f7f4ee;
 }
 
 html {
   min-width: 320px;
-  background: #0b0f17;
+  background: #f7f4ee;
   scroll-behavior: smooth;
 }
 
 * {
-  border-color: #263247;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  background: #0b0f17;
-  color: #d8e2ee;
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  background: #f7f4ee;
+  color: #172033;
+  font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -33,12 +34,17 @@ a {
 }
 
 button,
-a {
+a,
+summary {
   -webkit-tap-highlight-color: transparent;
 }
 
+summary::-webkit-details-marker {
+  display: none;
+}
+
 :focus-visible {
-  outline: 2px solid #00f0ff;
+  outline: 3px solid rgba(49, 87, 213, 0.42);
   outline-offset: 3px;
 }
 
@@ -47,21 +53,34 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b0f17;
+  background: #eee8dc;
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 3px solid #0b0f17;
-  background: #263247;
+  border: 3px solid #eee8dc;
+  background: #9b968c;
   border-radius: 999px;
 }
 
 ::selection {
-  background: rgba(0, 240, 255, 0.25);
-  color: #f7fbff;
+  background: #f5b942;
+  color: #172033;
 }
 
-.grid-noise {
-  background-image: linear-gradient(rgba(0, 240, 255, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 240, 255, 0.035) 1px, transparent 1px);
-  background-size: 32px 32px;
+.paper-grid {
+  background-image: linear-gradient(rgba(23, 32, 51, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 32, 51, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.dot-field {
+  background-image: radial-gradient(rgba(23, 32, 51, 0.16) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.editorial-rule {
+  background-image: linear-gradient(90deg, #3157d5 0 40px, #dcd5c8 40px 100%);
 }

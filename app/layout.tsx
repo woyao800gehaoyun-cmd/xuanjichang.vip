@@ -1,43 +1,43 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Activity, RadioTower } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import { SiteHeader } from '@/components/site-header';
+import { navigation } from '@/lib/site-content';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: '线路观测站｜网络专线与节点服务评测',
-    template: '%s｜线路观测站',
+    default: '选机场｜网络专线、机场评测与客户端指南',
+    template: '%s｜选机场',
   },
-  description: '面向技术用户的网络专线、IPLC/IEPL 与节点服务实测数据库。',
+  description: '提供机场推荐、网络专线实测、客户端下载、AI 与流媒体工具指南。用可复核的数据帮助你判断线路质量。',
+  keywords: ['机场推荐', '机场评测', '网络专线', 'IPLC', 'IEPL', '客户端下载', '免费节点'],
+  metadataBase: new URL('https://xuanjichang.vip'),
+  alternates: { canonical: '/' },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="zh-CN" className="dark">
+    <html lang="zh-CN">
       <body>
-        <header className="sticky top-0 z-50 border-b border-slate-800/90 bg-canvas/95 backdrop-blur">
-          <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8">
-            <Link href="/" className="flex items-center gap-3" aria-label="线路观测站首页">
-              <span className="flex h-9 w-9 items-center justify-center border border-accent/50 bg-accent/10 text-accent shadow-glow-sm">
-                <RadioTower size={19} strokeWidth={1.8} />
-              </span>
-              <span>
-                <span className="block text-sm font-semibold tracking-[0.18em] text-slate-100">线路观测站</span>
-                <span className="block text-[10px] uppercase tracking-[0.22em] text-slate-500">Network route lab</span>
-              </span>
-            </Link>
-            <nav className="flex items-center gap-5 text-xs text-slate-400" aria-label="主导航">
-              <Link href="/" className="transition hover:text-accent">全部评测</Link>
-              <Link href="/#monitor" className="flex items-center gap-1.5 transition hover:text-accent"><Activity size={14} />实时观测</Link>
-              <span className="hidden border-l border-slate-800 pl-5 text-[11px] text-slate-500 sm:inline">数据更新：2026.10</span>
-            </nav>
-          </div>
-        </header>
+        <SiteHeader />
         {children}
-        <footer className="border-t border-slate-800/80 bg-canvas">
-          <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-8 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between lg:px-8">
-            <span>线路观测站 · 独立实测记录</span>
-            <span>指标口径：晚高峰 20:00–22:30，结果仅代表测试周期。</span>
+        <footer className="border-t border-line bg-cream">
+          <div className="mx-auto max-w-[1440px] px-5 py-12 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-[1.2fr_2fr]">
+              <div>
+                <Link href="/" className="text-2xl font-black tracking-[-0.05em] text-ink">选机场<span className="text-coral">.</span></Link>
+                <p className="mt-3 max-w-sm text-sm leading-7 text-muted">用真实测试拆解线路质量、客户端配置和网络工具。数据会变化，方法必须透明。</p>
+                <Link href="/about/" className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-brand">了解评测方法 <ArrowUpRight size={14} /></Link>
+              </div>
+              <div className="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-5">
+                {navigation.map((item) => <Link key={item.href} href={item.href} className="text-sm text-ink/70 transition hover:text-brand">{item.label}</Link>)}
+              </div>
+            </div>
+            <div className="mt-10 flex flex-col gap-2 border-t border-line pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+              <span>© 2026 xuanjichang.vip · 独立内容站</span>
+              <span>测速结果只代表记录周期，不构成永久服务承诺。</span>
+            </div>
           </div>
         </footer>
       </body>
