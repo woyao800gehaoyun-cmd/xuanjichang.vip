@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, ArrowUpRight, CircleAlert, FileText } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, CircleAlert, FileText, Send } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { getSection, sections } from '@/lib/site-content';
 
@@ -60,6 +60,7 @@ export default function SectionPage({ params }: SectionPageProps) {
       <section className="bg-white py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-5 lg:px-8">
           {section.notice && <div className="mb-8 flex gap-3 rounded-2xl border border-sun/70 bg-[#FFF8DF] p-4 text-sm leading-6 text-ink"><CircleAlert size={19} className="mt-0.5 shrink-0 text-[#9B6A00]" /><span>{section.notice}</span></div>}
+          {section.slug === 'contact' && <a href="https://t.me/rumors6688" target="_blank" rel="noopener noreferrer" className="group mb-8 flex items-center justify-between gap-5 rounded-3xl bg-[#229ED9] p-6 text-white transition hover:-translate-y-0.5 hover:shadow-lift sm:p-7"><div className="flex items-center gap-4"><span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15"><Send size={23} /></span><div><p className="text-xs font-black uppercase tracking-[0.16em] text-white/65">Telegram</p><p className="mt-1 text-xl font-black">@rumors6688</p><p className="mt-1 text-sm text-white/70">通过 Telegram 提交线索或联系编辑</p></div></div><ArrowUpRight size={22} className="transition group-hover:translate-x-1 group-hover:-translate-y-1" /></a>}
           <div className="flex items-end justify-between border-b border-line pb-5"><div><p className={`text-xs font-black uppercase tracking-[0.18em] ${styles.text}`}>GUIDES & NOTES</p><h2 className="mt-2 text-3xl font-black tracking-[-0.04em] text-ink">栏目内容</h2></div><span className="text-xs font-semibold text-muted">{section.cards.length} 个主题</span></div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {section.cards.map((card, index) => (
