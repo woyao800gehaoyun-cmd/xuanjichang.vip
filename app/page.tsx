@@ -137,6 +137,12 @@ export default function HomePage() {
               ['多设备', '家庭场景的路由器与设备配置', '从并发限制到旁路由接入，计算真实成本。'],
             ].map(([tag, title, text]) => <Link key={title} href="/recommendations/" className="group rounded-3xl border border-line bg-paper p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-card"><span className="rounded-full bg-[#DDE5FF] px-3 py-1 text-[11px] font-black text-brand">{tag}</span><h3 className="mt-7 text-xl font-black tracking-[-0.03em] text-ink transition group-hover:text-brand">{title}</h3><p className="mt-3 text-sm leading-6 text-muted">{text}</p><span className="mt-7 inline-flex items-center gap-2 text-xs font-black text-brand">查看建议 <ArrowRight size={14} /></span></Link>)}
           </div>
+          <div className="mt-8 grid gap-3 rounded-4xl bg-ink p-5 sm:grid-cols-2 lg:grid-cols-4 lg:p-6">
+            {reviewList.filter((review) => ['光年梯', '瞬云', '云图', '鲲鹏加速'].includes(review.brandName)).map((review) => {
+              const extra = review as { editorPick?: boolean; couponCode?: string };
+              return <Link key={review.slug} href={`/reviews/${review.slug}/`} className="group rounded-3xl bg-white/10 p-5 text-white transition hover:bg-white/15"><div className="flex items-center justify-between gap-3"><span className="text-lg font-black">{review.brandName}</span>{extra.editorPick && <span className="rounded-full bg-sun px-2 py-1 text-[10px] font-black text-ink">主推</span>}</div><p className="mt-2 text-xs text-white/55">{review.transitType}</p><div className="mt-5 flex items-end justify-between"><div><span className="text-xl font-black text-sun">{review.pricing.split('·')[0]}</span><span className="ml-1 text-[10px] text-white/45">起</span></div><ArrowUpRight size={17} className="text-white/55 transition group-hover:translate-x-1 group-hover:-translate-y-1" /></div><div className="mt-4 border-t border-white/10 pt-3 text-[11px] text-white/50">优惠码：{extra.couponCode ?? '暂无'}</div></Link>;
+            })}
+          </div>
         </div>
       </section>
 

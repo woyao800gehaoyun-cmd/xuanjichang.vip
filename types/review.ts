@@ -15,6 +15,8 @@ export type ReviewFrontmatter = {
   latency?: Record<string, number>;
   streaming?: string;
   tagline?: string;
+  couponCode?: string;
+  editorPick?: boolean;
 };
 
 export type ReviewPost = ReviewFrontmatter & {

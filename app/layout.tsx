@@ -32,6 +32,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               </div>
               <div className="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-5">
                 {navigation.map((item) => <Link key={item.href} href={item.href} className="text-sm text-ink/70 transition hover:text-brand">{item.label}</Link>)}
+                <Link href="/keyword-library/" className="text-sm font-bold text-brand transition hover:text-brand-dark">关键词导航</Link>
               </div>
             </div>
             <div className="mt-10 flex flex-col gap-2 border-t border-line pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">

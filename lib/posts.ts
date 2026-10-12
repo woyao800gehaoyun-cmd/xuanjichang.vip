@@ -25,6 +25,8 @@ function normalizeFrontmatter(data: Record<string, unknown>): ReviewFrontmatter 
       : undefined,
     streaming: data.streaming ? String(data.streaming) : undefined,
     tagline: data.tagline ? String(data.tagline) : undefined,
+    couponCode: data.couponCode ? String(data.couponCode) : undefined,
+    editorPick: Boolean(data.editorPick),
   };
 }
 
@@ -47,5 +49,5 @@ export function getAllReviews(): ReviewPost[] {
   return getReviewSlugs()
     .map((slug) => getReviewBySlug(slug))
     .filter((review): review is ReviewPost => Boolean(review))
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .sort((a, b) => Number(Boolean(b.editorPick)) - Number(Boolean(a.editorPick)) || new Date(b.date).getTime() - new Date(a.date).getTime());
 }

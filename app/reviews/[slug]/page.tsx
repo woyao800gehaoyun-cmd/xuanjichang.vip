@@ -73,7 +73,7 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
             <Link href="/reviews/" className="inline-flex items-center gap-2 text-xs font-bold text-white/50 transition hover:text-white"><ArrowLeft size={14} />返回评测索引</Link>
             <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_260px] lg:items-end">
               <div>
-                <div className="flex flex-wrap items-center gap-3 text-xs font-bold text-white/45"><span className="rounded-full bg-brand px-3 py-1.5 text-white">深度实测</span><span>{review.date}</span><span>·</span><span>{review.transitType}</span></div>
+                <div className="flex flex-wrap items-center gap-3 text-xs font-bold text-white/45"><span className="rounded-full bg-brand px-3 py-1.5 text-white">{review.editorPick ? '编辑主推' : '深度实测'}</span><span>{review.date}</span><span>·</span><span>{review.transitType}</span></div>
                 <h1 className="text-balance mt-6 max-w-5xl text-4xl font-black leading-[1.06] tracking-[-0.055em] sm:text-6xl">{review.title}</h1>
                 <p className="mt-6 max-w-3xl text-base leading-8 text-white/60">{review.description}</p>
               </div>
@@ -122,6 +122,8 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
               <p className="mt-5 text-sm leading-6 text-white/65">通过官方页面核对最新价格、流量与退款规则。</p>
               <div className="mt-6 flex items-center justify-between border-t border-white/15 pt-4 text-sm font-bold"><span>官方直达 / 可能含返利</span><ArrowUpRight size={16} className="transition group-hover:translate-x-1 group-hover:-translate-y-1" /></div>
             </a>
+
+            {review.couponCode && <div className="rounded-3xl border border-[#F1D38A] bg-[#FFF8DF] p-6 text-ink"><p className="text-xs font-black uppercase tracking-[0.16em] text-[#9B6A00]">优惠码</p><div className="mt-3 flex items-center justify-between gap-3"><code className="rounded-xl bg-white px-3 py-2 text-lg font-black tracking-[0.08em] text-ink">{review.couponCode}</code><span className="text-xs font-bold text-[#9B6A00]">结算时填写</span></div><p className="mt-3 text-xs leading-5 text-muted">优惠有效期与适用套餐以服务商页面为准，本站不保证优惠长期有效。</p></div>}
 
             <div className="rounded-3xl border border-line bg-white p-6">
               <p className="text-xs font-black uppercase tracking-[0.16em] text-brand">Protocols</p>
