@@ -50,7 +50,7 @@ export default async function ReviewPage({ params }: ReviewPageProps) {
     '@type': 'Review',
     name: review.title,
     datePublished: review.date,
-    author: { '@type': 'Organization', name: '选机场编辑部', url: 'https://xuanjichang.vip' },
+    author: { '@type': 'Organization', name: '选梯子编辑部', url: 'https://xuanjichang.vip' },
     reviewBody: review.description,
     reviewRating: { '@type': 'Rating', ratingValue: review.overallScore, bestRating: 10, worstRating: 0 },
     positiveNotes: { '@type': 'ItemList', itemListElement: review.pros.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })) },

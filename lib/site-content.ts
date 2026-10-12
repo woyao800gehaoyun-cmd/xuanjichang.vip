@@ -1,6 +1,6 @@
 export const navigation = [
-  { href: '/recommendations/', label: '机场推荐' },
-  { href: '/reviews/', label: '机场评测' },
+  { href: '/#recommendations', label: '梯子推荐' },
+  { href: '/#articles', label: '梯子评测' },
   { href: '/tutorials/', label: '客户端教程' },
   { href: '/downloads/', label: '客户端下载' },
   { href: '/ai-tools/', label: 'AI 工具' },
@@ -26,7 +26,7 @@ export type SectionData = {
 
 export const sections: SectionData[] = [
   {
-    slug: 'recommendations', navLabel: '机场推荐', eyebrow: 'EDITORIAL PICKS', accent: 'blue',
+    slug: 'recommendations', navLabel: '梯子推荐', eyebrow: 'EDITORIAL PICKS', accent: 'blue',
     title: '按真实需求选线路，而不是照着排行榜盲买',
     description: '我们把预算、运营商、设备数量和主要用途拆开比较。每个推荐都标明适用边界，不用“全网最好”这类无法验证的结论。',
     highlights: [{ value: '4 类', label: '使用场景' }, { value: '6 项', label: '核心指标' }, { value: '月更', label: '价格与可用性' }],
@@ -118,7 +118,7 @@ export const sections: SectionData[] = [
   {
     slug: 'about', navLabel: '关于我们', eyebrow: 'ABOUT THE DESK', accent: 'sun',
     title: '我们评测的是线路表现，不是宣传页面',
-    description: '选机场是一份面向普通用户和技术读者的独立内容站。我们记录测试环境、时间窗口和判断边界，让结论尽量可以复核。',
+    description: '选梯子是一份面向普通用户和技术读者的独立内容站。我们记录测试环境、时间窗口和判断边界，让结论尽量可以复核。',
     highlights: [{ value: '20:00', label: '晚高峰起测' }, { value: '多网', label: '运营商交叉验证' }, { value: '披露', label: '商业关系' }],
     cards: [
       { tag: '原则', title: '不出售排名位置', description: '推荐顺序由测试结果和适用场景决定。商业合作不会改变已记录的测试数据。', meta: '编辑独立性' },

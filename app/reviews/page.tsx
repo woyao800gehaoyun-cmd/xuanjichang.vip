@@ -4,8 +4,8 @@ import { ArrowRight, ArrowUpRight, FlaskConical, Gauge, Route, ShieldCheck } fro
 import { getAllReviews } from '@/lib/posts';
 
 export const metadata: Metadata = {
-  title: '机场评测',
-  description: '网络专线与节点服务的深度评测索引，记录晚高峰吞吐、丢包、线路结构、协议兼容和平台解锁结果。',
+  title: '梯子评测',
+  description: '网络专线与节点服务的深度梯子评测索引，记录晚高峰吞吐、丢包、线路结构、协议兼容和平台解锁结果。',
   alternates: { canonical: '/reviews/' },
 };
 
@@ -16,7 +16,7 @@ export default function ReviewsIndexPage() {
       <section className="border-b border-line bg-ink py-14 text-white lg:py-20">
         <div className="mx-auto max-w-[1440px] px-5 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
-            <div><p className="text-xs font-black uppercase tracking-[0.2em] text-sun">INDEPENDENT REVIEWS</p><h1 className="text-balance mt-5 text-5xl font-black tracking-[-0.065em] sm:text-7xl">机场评测<br /><span className="text-white/35">数据比口号重要。</span></h1><p className="mt-6 max-w-2xl text-base leading-8 text-white/60">每篇评测都标注测试时间、入口网络和判断边界。线路状态可能变化，因此旧数据不会被包装成永久承诺。</p></div>
+            <div><p className="text-xs font-black uppercase tracking-[0.2em] text-sun">INDEPENDENT REVIEWS</p><h1 className="text-balance mt-5 text-5xl font-black tracking-[-0.065em] sm:text-7xl">梯子评测<br /><span className="text-white/35">数据比口号重要。</span></h1><p className="mt-6 max-w-2xl text-base leading-8 text-white/60">每篇评测都标注测试时间、入口网络和判断边界。线路状态可能变化，因此旧数据不会被包装成永久承诺。</p></div>
             <div className="grid grid-cols-3 gap-px overflow-hidden rounded-3xl bg-white/10"><IndexMetric icon={Gauge} value="晚高峰" label="固定窗口" /><IndexMetric icon={Route} value="多节点" label="延迟与丢包" /><IndexMetric icon={ShieldCheck} value="实测" label="解锁与风控" /></div>
           </div>
         </div>

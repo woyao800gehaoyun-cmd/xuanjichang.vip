@@ -6,13 +6,13 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/90 bg-paper/95 backdrop-blur-xl">
       <div className="mx-auto flex h-[74px] max-w-[1440px] items-center justify-between px-5 lg:px-8">
-        <Link href="/" className="group flex shrink-0 items-center gap-3" aria-label="选机场首页">
+        <Link href="/" className="group flex shrink-0 items-center gap-3" aria-label="选梯子首页">
           <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-ink text-paper">
             <Radar size={20} strokeWidth={2.2} />
             <span className="absolute -bottom-2 -right-2 h-5 w-5 rounded-full bg-coral transition-transform group-hover:scale-150" />
           </span>
           <span>
-            <span className="block text-lg font-black tracking-[-0.04em] text-ink">选机场</span>
+            <span className="block text-lg font-black tracking-[-0.04em] text-ink">选梯子</span>
             <span className="block text-[9px] font-bold uppercase tracking-[0.24em] text-muted">Route Review</span>
           </span>
         </Link>

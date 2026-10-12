@@ -68,7 +68,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-8 max-w-xl text-base leading-8 text-muted sm:text-lg">不照搬宣传参数。我们记录晚高峰速度、物理时延、协议兼容和出口质量，把复杂网络指标翻译成清楚的购买建议。</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/recommendations/" className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-brand hover:shadow-lift">查看机场推荐 <ArrowRight size={17} /></Link>
+              <Link href="#recommendations" className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-brand hover:shadow-lift">查看梯子推荐 <ArrowRight size={17} /></Link>
               <Link href="/about/" className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-6 py-3.5 text-sm font-bold text-ink transition hover:border-ink">我们的测试方法</Link>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 border-t border-line pt-5 text-xs font-semibold text-muted">
@@ -126,9 +126,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 lg:py-24">
+      <section id="recommendations" className="bg-white py-16 lg:py-24">
         <div className="mx-auto max-w-[1440px] px-5 lg:px-8">
-          <SectionHeading eyebrow="LATEST FIELD NOTES" title="最近评测" description="只展示已记录测试环境和时间的内容。" href="/reviews/" linkLabel="全部评测" />
+          <SectionHeading eyebrow="EDITORIAL PICKS" title="梯子推荐" description="按场景筛选线路，首页直接给出可执行的选择建议。" href="/recommendations/" linkLabel="查看完整指南" />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              ['稳定优先', '跨境办公与远程会议线路怎么选', '重点看晚高峰丢包、入口机房和工单响应。'],
+              ['预算优先', '每月 20 元档的选择与取舍', '对比流量、设备数和月付政策，排除隐性限制。'],
+              ['解锁优先', 'AI 与流媒体兼顾的出口策略', '出口 IP 质量比节点数量更重要。'],
+              ['多设备', '家庭场景的路由器与设备配置', '从并发限制到旁路由接入，计算真实成本。'],
+            ].map(([tag, title, text]) => <Link key={title} href="/recommendations/" className="group rounded-3xl border border-line bg-paper p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-card"><span className="rounded-full bg-[#DDE5FF] px-3 py-1 text-[11px] font-black text-brand">{tag}</span><h3 className="mt-7 text-xl font-black tracking-[-0.03em] text-ink transition group-hover:text-brand">{title}</h3><p className="mt-3 text-sm leading-6 text-muted">{text}</p><span className="mt-7 inline-flex items-center gap-2 text-xs font-black text-brand">查看建议 <ArrowRight size={14} /></span></Link>)}
+          </div>
+        </div>
+      </section>
+
+      <section id="articles" className="bg-paper py-16 lg:py-24">
+        <div className="mx-auto max-w-[1440px] px-5 lg:px-8">
+          <SectionHeading eyebrow="LATEST FIELD NOTES" title="最新文章与梯子评测" description="只展示已记录测试环境和时间的内容。" href="/reviews/" linkLabel="全部文章" />
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {reviewList.map((review, index) => (
               <Link key={review.slug} href={`/reviews/${review.slug}/`} className={`group relative overflow-hidden rounded-3xl border border-line p-6 transition hover:-translate-y-1 hover:shadow-card ${index === 0 ? 'bg-paper lg:col-span-2 lg:grid lg:grid-cols-[1fr_auto] lg:gap-10 lg:p-9' : 'bg-white'}`}>
@@ -145,10 +159,10 @@ export default function HomePage() {
               </Link>
             ))}
             {reviewList.length < 2 && (
-              <Link href="/recommendations/" className="group rounded-3xl bg-coral p-7 text-white transition hover:-translate-y-1 hover:shadow-card">
+              <Link href="#recommendations" className="group rounded-3xl bg-coral p-7 text-white transition hover:-translate-y-1 hover:shadow-card">
                 <Sparkles size={26} />
                 <p className="mt-10 text-xs font-black uppercase tracking-[0.16em] text-white/65">Buying guide</p>
-                <h3 className="mt-3 text-3xl font-black tracking-[-0.05em]">不知道怎么选？<br />先按场景筛选。</h3>
+                <h3 className="mt-3 text-3xl font-black tracking-[-0.05em]">不知道怎么选梯子？<br />先按场景筛选。</h3>
                 <div className="mt-8 inline-flex items-center gap-2 text-sm font-bold">打开推荐指南 <ArrowRight size={16} className="transition group-hover:translate-x-1" /></div>
               </Link>
             )}
@@ -181,7 +195,7 @@ export default function HomePage() {
       <section className="bg-sun py-14">
         <div className="mx-auto flex max-w-[1440px] flex-col gap-7 px-5 sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <div><p className="text-xs font-black uppercase tracking-[0.18em] text-ink/55">START HERE</p><h2 className="mt-2 text-3xl font-black tracking-[-0.04em] text-ink">先了解风险，再决定购买。</h2></div>
-          <div className="flex flex-wrap gap-3"><Link href="/free-nodes/" className="rounded-full border border-ink px-5 py-3 text-sm font-bold text-ink">免费节点风险</Link><Link href="/contact/" className="rounded-full bg-ink px-5 py-3 text-sm font-bold text-white">提交评测线索</Link></div>
+          <div className="flex flex-wrap gap-3"><Link href="/free-nodes/" className="rounded-full border border-ink px-5 py-3 text-sm font-bold text-ink">免费节点风险</Link><Link href="/contact/" className="rounded-full bg-ink px-5 py-3 text-sm font-bold text-white">提交梯子评测线索</Link></div>
         </div>
       </section>
     </main>

@@ -26,7 +26,7 @@ export function generateMetadata({ params }: SectionPageProps): Metadata {
     title: section.navLabel,
     description: section.description.slice(0, 150),
     alternates: { canonical: `/${section.slug}/` },
-    openGraph: { title: `${section.navLabel}｜选机场`, description: section.description, url: `/${section.slug}/`, type: 'website' },
+    openGraph: { title: `${section.navLabel}｜选梯子`, description: section.description, url: `/${section.slug}/`, type: 'website' },
   };
 }
 
@@ -80,7 +80,7 @@ export default function SectionPage({ params }: SectionPageProps) {
       </section>
 
       <section className="border-t border-line bg-cream py-8">
-        <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 text-sm lg:px-8"><span className="text-muted">继续浏览完整评测与测试数据</span><Link href="/reviews/" className="inline-flex items-center gap-2 font-black text-brand">机场评测 <ArrowRight size={15} /></Link></div>
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 text-sm lg:px-8"><span className="text-muted">继续浏览完整评测与测试数据</span><Link href="/#articles" className="inline-flex items-center gap-2 font-black text-brand">梯子评测 <ArrowRight size={15} /></Link></div>
       </section>
     </main>
   );
