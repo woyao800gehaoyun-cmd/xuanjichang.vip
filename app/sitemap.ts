@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: baseUrl, lastModified: new Date('2026-10-12'), changeFrequency: 'weekly', priority: 1 },
     { url: `${baseUrl}/reviews/`, lastModified: new Date('2026-10-12'), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/keyword-library/`, lastModified: new Date('2026-10-13'), changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${baseUrl}/ai-tools/`, lastModified: new Date('2026-10-16'), changeFrequency: 'weekly', priority: 0.8 },
     ...sectionPages,
     ...reviewPages,
   ];

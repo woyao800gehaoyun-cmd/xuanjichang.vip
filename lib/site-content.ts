@@ -67,18 +67,6 @@ export const sections: SectionData[] = [
     ],
   },
   {
-    slug: 'ai-tools', navLabel: 'AI 工具', eyebrow: 'AI WORKSPACE', accent: 'sun',
-    title: 'AI 产品入口、网络要求与使用效率指南',
-    description: '关注 ChatGPT、Claude、Gemini 等工具的地区可用性、账号风控和日常工作流，不收集或提供绕过平台规则的方法。',
-    highlights: [{ value: '3+', label: '主流平台' }, { value: '实用', label: '工作流优先' }, { value: '更新', label: '地区政策跟踪' }],
-    cards: [
-      { tag: '对比', title: 'ChatGPT、Claude 与 Gemini 怎么分工', description: '从长文本、代码、搜索整合与多模态四类任务比较，不用单一榜单替代实际需求。', meta: '工具选择指南' },
-      { tag: '风控', title: '为什么频繁切换出口地区容易触发验证', description: '解释 IP 地区、浏览器环境、登录节奏与支付资料不一致带来的账号风险。', meta: '账号安全' },
-      { tag: '效率', title: '把 AI 变成可复用的内容研究流程', description: '从资料整理、事实核验、提纲到发布前检查，建立清晰的人机协作边界。', meta: '编辑工作流' },
-      { tag: '隐私', title: '向 AI 上传文件之前应该检查什么', description: '识别个人信息、商业秘密、访问凭据和版权材料，减少无意的数据暴露。', meta: '隐私清单' },
-    ],
-  },
-  {
     slug: 'streaming-tools', navLabel: '流媒体工具', eyebrow: 'STREAMING DESK', accent: 'coral',
     title: '片库检测、画质排查与跨区观看基础知识',
     description: '整理 Netflix、Disney+、YouTube 等平台常见问题。解锁结果会随出口 IP 和平台策略变化，任何一次检测都不是永久保证。',
